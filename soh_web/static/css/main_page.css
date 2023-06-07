@@ -142,3 +142,29 @@
     background: #1ba4a2;
     color: white;
 }
+
+.possibilities-header {
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 72px;
+    text-align: center;
+}
+
+
+@media (max-width: 1200px) {
+    .possibilities-header {
+      font-size: 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    .possibilities-header {
+      font-size: 35px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .possibilities-header {
+      font-size: 45px;
+    }
+}

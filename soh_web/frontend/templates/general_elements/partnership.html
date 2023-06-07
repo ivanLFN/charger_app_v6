@@ -1,4 +1,23 @@
 {% load static %}
-<div class="container">
-    
+
+<div class="possibilities-header col-10 offset-1 mt-4">
+    Для кого мы работаем
+</div>
+
+
+<div class="container mt-3">
+    <div class="row">
+        {% for item in partners_list %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{% static item.image.src %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.title }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <a href="{% url 'partner_detail' partner_title=item.title %}" class="btn btn-primary my-btn">Подробнее...</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
