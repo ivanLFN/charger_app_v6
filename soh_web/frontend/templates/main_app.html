@@ -19,26 +19,16 @@
       <div class="header-content">
         {% include 'main_page/head_part.html' %}
       </div>
-      
-
-
       </div>
-      
+
       
     </div>
 
-    
-    
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        var menuItems = document.querySelector('.btn-items');
+    <div>
+      {% include 'general_elements/partnership.html' %}
+    </div>
 
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenuBtn.classList.toggle('show');
-            menuItems.classList.toggle('show');
-        });
-      });
-    </script>
+    
+  
   </body>
 </html>
