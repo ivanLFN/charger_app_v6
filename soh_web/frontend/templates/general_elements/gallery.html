@@ -1,0 +1,32 @@
+<!-- gallery.html -->
+{% load static %}
+
+<div class="container">
+    <div class="tasks-type-header col-10 offset-1 mb-3">
+        Галерея:
+    </div>
+    <div class="image-gallery">
+        {% for image_card in available_images %}
+        <div class="card" data-toggle="modal" data-target="#imageModal{{ forloop.counter }}">
+            <img src="{% static image_card.src %}" alt="{{ image_card.desc }}" class="card-img gallery-img">
+            <div class="card-img-overlay text-white">
+                <h5 class="card-title">{{ image_card.desc }}</h5>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="imageModal{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel{{ forloop.counter }}" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="{% static image_card.src %}" alt="{{ image_card.desc }}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+
+        {% endfor %}
+    </div>
+</div>
+

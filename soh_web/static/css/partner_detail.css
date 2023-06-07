@@ -1,0 +1,73 @@
+@media (max-width: 767px) {
+    .text-custom {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-img {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .mob-mode {
+        width: 100%;
+    }
+}
+.no-active-img{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #212529;
+    border-radius: 10px;
+}
+
+.custom-h2-style {
+    font-weight: normal;
+    font-size: 1.5rem; /* Измените значение размера шрифта по вашему выбору */
+}
+
+.custom-p-style{
+    font-size: 1.2rem; /* Измените значение размера шрифта по вашему выбору */
+}
+
+.custom-button {
+    background-color: #8f8484;
+    border-color: #514e4e;
+    color: #ffffff;
+}
+.custom-button:hover {
+    background-color: #676161;
+}
+
+
+
+
+/* <div class="col-12 mx-auto">
+                <div class="mt-5">
+                    <ul class="nav nav-tabs">
+                        {% for segment in segmets_of_work %}
+                            <li class="nav-item" style="font-size: 1.2rem;">
+                                <a class="nav-link" href="#">{{ segment.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+    
+                <div class="tab-content">
+                    {% for segment in segmets_of_work %}
+                        <div class="tab-pane">
+                            <div class="row">
+                                <div class="col-12 col-md-5 mt-3">
+                                    <img src="{% static segment.image.src %}" alt="{{ segment.title }}" class="w-100 border rounded-3" />
+                                </div>
+    
+                                <div class="col-12 col-md-7">
+                                    <div class="d-flex flex-column align-items-start">
+                                        <p class="mt-3" style="font-size: 1.2rem;">{{ segment.about }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div> */

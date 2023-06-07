@@ -1,6 +1,67 @@
-<!-- partner_detail.html -->
-<div class="partner-detail">
-    <h2>{{ partner.title }}</h2>
-    <img src="{{ partner.image.url }}" alt="{{ partner.title }}">
-    <p>{{ partner.description }}</p>
-</div>
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+    <div class="container">
+        <!-- class="border rounded-3"  -->
+    
+        {% if partner %}
+            <div class="row justify-content-center align-items-center">
+                <div class="col-10 col-sm-5">
+                    <h1>{{ partner.header_text_main }}</h1>
+                    <p class="mt-3" style="font-size: 1.2rem;">{{ partner.header_text }}</p>
+                    <a href="#" class="btn btn-primary pt-2 pb-2 mt-3 justify-content-center">Нужна консультация</a>
+                </div>
+                <div class="col-7 text-center">
+                    <img src="{% static partner.header_img.src %}" alt="{{ partner.title }}" class="header-img img-fluid" style="max-width: 100%;" />
+                </div>
+            </div>
+            
+            <div class="text-center align-items-center text-custom">
+                <h1>{{ partner.header_body }}</h1>
+            </div>
+
+            <ul class="nav nav-tabs mt-3">
+                {% for tab in tabs %}
+                  <li class="nav-item">
+                    <a class="nav-link{% if tab.active %} active{% endif %}" href="#{{ tab.id }}" data-toggle="tab">{{ tab.title }}</a>
+                  </li>
+                {% endfor %}
+            </ul>
+              
+            <div class="tab-content">
+            {% for tab in tabs %}
+                <div class="tab-pane{% if tab.active %} active{% endif %}" id="{{ tab.id }}">
+
+                    <div class="row">
+                        <div class="col-12 col-md-5 mt-3">
+                            <img src="{% static tab.image.src %}" alt="{{ partner.title }}" class="w-100 rounded rounded-5" />
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <div class="d-flex flex-column align-items-start">
+                                <p class="mt-3" style="font-size: 1.2rem;">{{ tab.content }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+    
+            <script>
+                $(document).ready(function() {
+                  $('.nav-link').click(function(e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                  });
+                });
+            </script>
+            
+            
+        {% else %}
+            <div style="height: 35vh;">
+                <h1 class="row justify-content-center">Страница не найдена!</h1>
+            </div>
+        {% endif %}
+    </div>
+
+    {% endblock %}

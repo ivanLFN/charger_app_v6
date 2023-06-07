@@ -168,3 +168,53 @@
       font-size: 45px;
     }
 }
+
+.image-gallery {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.image-gallery .card {
+    display: inline-block;
+    width: 300px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.image-gallery .card:hover img {
+    filter: brightness(70%);
+}
+
+.image-gallery .card .card-img-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-gallery .card:hover .card-img-overlay {
+    opacity: 1;
+}
+
+.tasks-type-header{
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 72px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+@media (max-width: 1200px) {
+    .tasks-type-header {
+    font-size: 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tasks-type-header {
+    font-size: 35px;
+    }
+}
+
+.gallery-img {
+    height: 200px; /* Задайте желаемую высоту */
+    object-fit: cover; /* Чтобы изображения заполняли область с сохранением пропорций */
+  }
