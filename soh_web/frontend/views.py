@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from frontend.models import Partnership, Image
+from frontend.models import Partnership, Image, Product
+
 
 def main_app(request):
     partners_list = Partnership.objects.all()
@@ -22,7 +23,7 @@ def partner_detail(request, partner_title):
             'title': segment.title,
             'content': segment.about,
             'image': segment.image,
-            'active': False, 
+            'active': False,
         }
         tabs.append(tab)
 
@@ -31,8 +32,18 @@ def partner_detail(request, partner_title):
 
     return render(request, 'general_elements/partner_detail.html', {'partner': partner, 'tabs': tabs})
 
-    
+
+def store(request):
+    product_list = Product.objects.filter(dev='False')
+    product_dev_list = Product.objects.filter(dev='True')
+    data = {
+        'product_list': product_list,
+        'product_dev_list': product_dev_list
+    }
+    return render(request, 'store/store.html', data)
 
 
-
-
+def product_detail(request, product_title):
+    product = Product.objects.get(title=product_title)
+    active_img = product.images.first().src
+    return render(request, 'store/product_detail.html', {'product': product, 'active_img': active_img})

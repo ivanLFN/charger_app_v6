@@ -1,0 +1,81 @@
+
+<!-- product_detail.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container">
+    {% if product %}
+    <div class="row desc-element border-element">
+        <div class="col-md-4 d-flex justify-content-center flex-column align-items-center">
+          <div class="mob-mode">
+            <div class="active-img" style="position: relative;">
+              <img src="{{ active_img }}" alt="{{ product.title }}" class="custom-radius" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+            </div>
+          </div>
+      
+          <div class="mt-1">
+            <div class="d-flex">
+              {% for image in product.images.all %}
+                <div class="thumbnail mr-3" style="cursor: pointer;">
+                  <img src="{% static image.src %}" alt="{{ image.src }}" class="rounded-circle" style="width: 50px; height: 50px;">
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 p-4 mob-mode">
+          <div class="detalis-info">
+            <h1>{{ product.title }}</h1>
+            <h2 class="custom-h2-style">Цена: <strong>{{ product.price }}</strong> ₽</h2>
+            <p class="custom-p-style">Монтаж: <strong>{{ product.installation }}</strong></p>
+            <p class="custom-p-style">Количество портов: <strong>{{ product.sockets_count }}</strong></p>
+            <p class="custom-p-style">Порт: <strong>{{ product.socket_type }}</strong></p>
+            <p class="custom-p-style">Мощность: <strong>{{ product.power }}</strong></p>
+            <p class="custom-p-style">Удалённое управление: <strong>{{ product.remote_control }}</strong></p>
+            <p class="custom-p-style">{{ product.description }}</p>
+      
+            <div class="row">
+              <div class="col-12 col-md-3 mb-2">
+                <router-link to="/form-message">
+                  <a href="#" class="btn btn-primary d-flex w-100 pt-2 pb-2 justify-content-center">Заказать</a>
+                </router-link>
+              </div>
+      
+              <div class="col-12 col-md-4 mb-2">
+                <router-link to="/form-message">
+                  <a href="#" class="btn btn-primary d-flex w-100 pt-2 pb-2 justify-content-center">Уточнить детали</a>
+                </router-link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+
+        
+    {% endif %}
+</div>
+
+<script>
+    // Получаем все элементы с классом thumbnail
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const activeImg = document.querySelector('.active-img img');
+
+    // Установка активного изображения при загрузке страницы
+    if (thumbnails.length > 0) {
+        const firstThumbnail = thumbnails[0];
+        activeImg.src = firstThumbnail.querySelector('img').src;
+    }
+
+    // Добавляем обработчик события для каждого элемента
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('mouseover', () => {
+            // При наведении меняем атрибут src активной картинки на src наведенного элемента
+            activeImg.src = thumbnail.querySelector('img').src;
+        });
+    });
+</script>
+    
+        
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+    <div class="container">
+        {% if product_list %}
+
+        <div class="header-store d-flex mt-5 mb-3">
+            <h2>Станции переменного тока</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            {% for product in product_list %}
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="card mb-4 custom-card">
+                    <img src="{% static product.images.first.src %}" class="card-img-top custom-card" alt="{{ product.title }}">
+                
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.title }}</h5>
+                        <p class="card-text">Мощность: {{ product.power }}</p>
+                        <p class="card-text"><strong>Цена: {{ product.price }} Р.</strong></p>
+            
+                        <div class="row">
+                            <!-- <a href="#" class="btn btn-primary col-5 offset-1">Подробнее</a> -->
+                            <a href="{% url 'product_detail' product_title=product.title %}" class="btn btn-primary col-5 offset-1">Подробнее</a>
+                            <a href="#" class="btn btn-primary col-4 offset-1">Заказать</a>
+                            
+                        </div>
+                            
+                    </div>
+                </div>  
+            </div>
+            
+            {% endfor %}
+        </div>
+
+        {% endif %}
+
+        
+
+        {% if product_dev_list %}
+
+        <div class="header-store d-flex mt-5 mb-3">
+            <h2>Станции в разработке</h2>
+        </div>
+
+
+        <div class="row">
+            {% for product in product_dev_list %}
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="card mb-4 custom-card">
+                    <img src="{% static product.images.first.src %}" class="card-img-top custom-card" alt="{{ product.title }}">
+                
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.title }}</h5>
+                        <p class="card-text">Мощность: {{ product.power }}</p>
+            
+                        <div class="row">
+                            <a href="{% url 'product_detail' product_title=product.title %}" class="btn btn-primary col-5 offset-1">Предзаказ</a>
+                            
+                        </div>
+                            
+                    </div>
+                </div>  
+            </div>
+            
+            {% endfor %}
+        </div>
+
+        {% endif %}
+            
+    </div>
+    
+        
+{% endblock %}

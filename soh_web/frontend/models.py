@@ -22,6 +22,7 @@ class Product(models.Model):
     socket_type = models.CharField(max_length=100)
     power = models.CharField(max_length=100)
     remote_control = models.CharField(max_length=100)
+    dev = models.BooleanField(default=False, blank=True)
 
     def __str__(self) -> str:
         return self.title

@@ -1,0 +1,45 @@
+.custom-card {
+    border-radius: 15px;
+}
+
+.custom-radius{
+    border-radius: 15px;
+}
+
+@media (max-width: 767px) {
+    .mob-mode {
+        width: 100%;
+    }
+}
+.no-active-img{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #212529;
+    border-radius: 10px;
+}
+
+.custom-h2-style {
+    font-weight: normal;
+    font-size: 1.5rem; /* Измените значение размера шрифта по вашему выбору */
+}
+
+.custom-p-style{
+    font-size: 1.2rem; /* Измените значение размера шрифта по вашему выбору */
+}
+
+.custom-button {
+    background-color: #8f8484;
+    border-color: #514e4e;
+    color: #ffffff;
+}
+.custom-button:hover {
+    background-color: #676161;
+}
+
+.thumbnail:hover img {
+    transform: scale(1.2); /* Увеличение размера картинки при наведении */
+}
+
+.border-element{
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+}
