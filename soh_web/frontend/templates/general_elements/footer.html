@@ -1,0 +1,52 @@
+{% load static %}
+
+<div class="col-12">
+    <div class="row footer-style container-fluid pt-5 mt-5">
+        <div class="col-12 col-md-3  d-flex flex-column align-items-center">
+
+            <div class="logo-el d-flex justify-content-center align-items-center">
+                <img src='{% static "img/logo_small.png" %}'/>
+                <div class="text-logo">SOH100</div>
+            </div>
+
+            <div class="links wk-el mt-3 mb-3">
+                    <a href="https://vk.com/soh100" target="_blank">
+                        <img src='{% static "img/wk_logo.png" %}'>
+                    </a>
+
+                    <a href="https://vk.com/soh100" target="_blank">
+                        <img src='{% static "img/instagram_logo.png" %}' >
+                    </a>
+            </div>
+
+            
+
+            <div class="additional-info mb-5">
+                <div class="additional-text">2023 © Все права защищены</div>
+                <div class="additional-text">ООО “СОХ100"</div>
+                <div class="additional-text">ОГРН 1212400007016</div>
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-3 d-flex flex-column align-items-center">
+            <div class="header-footer">Продукты</div>
+            <a href="{% url 'store' %}" class="item-footer">Продажа станций</a>
+            <a href="http://my.soh100.ru/" class="item-footer">Использование станций</a>
+            <a href="main_page" class="item-footer">Галерея</a>
+        </div>
+
+        <div class="col-12 col-md-3 d-flex flex-column align-items-center">
+            <div class="header-footer">Партнерство</div>
+            <a href="{% url 'partnership_page' %}" class="item-footer">Партнерство</a>
+            <a href="{% url 'create_order_or_question' %}" class="item-footer">Станции бесплатно</a>
+        </div>
+
+        <div class="col-12 col-md-3 d-flex flex-column align-items-center">
+            <div class="header-footer">Контакты</div>
+            <a href="#" class="item-footer">Телефон:+7 (495) 147-81-00</a>
+            <a href="#" class="item-footer">E-mail: info@soh100.ru</a>
+            <a href="{% url 'create_order_or_question' %}" class="item-footer">Задать вопрос</a>
+        </div>
+    </div>
+</div>
