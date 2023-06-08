@@ -47,3 +47,8 @@ def product_detail(request, product_title):
     product = Product.objects.get(title=product_title)
     active_img = product.images.first().src
     return render(request, 'store/product_detail.html', {'product': product, 'active_img': active_img})
+
+
+
+def personal_data(request):
+    return render(request, 'general_elements/personal_data.html', {})
