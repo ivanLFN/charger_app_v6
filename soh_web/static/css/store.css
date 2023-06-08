@@ -19,12 +19,10 @@
 
 .custom-h2-style {
     font-weight: normal;
-    font-size: 1.5rem; /* Измените значение размера шрифта по вашему выбору */
+    font-size: 1.5rem;
 }
 
-.custom-p-style{
-    font-size: 1.2rem; /* Измените значение размера шрифта по вашему выбору */
-}
+
 
 .custom-button {
     background-color: #8f8484;
@@ -36,7 +34,7 @@
 }
 
 .thumbnail:hover img {
-    transform: scale(1.2); /* Увеличение размера картинки при наведении */
+    transform: scale(1.2);
 }
 
 .border-element{

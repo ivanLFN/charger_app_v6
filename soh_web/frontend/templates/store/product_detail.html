@@ -25,31 +25,29 @@
           </div>
         </div>
         <div class="col-md-8 p-4 mob-mode">
-          <div class="detalis-info">
-            <h1>{{ product.title }}</h1>
-            <h2 class="custom-h2-style">Цена: <strong>{{ product.price }}</strong> ₽</h2>
-            <p class="custom-p-style">Монтаж: <strong>{{ product.installation }}</strong></p>
-            <p class="custom-p-style">Количество портов: <strong>{{ product.sockets_count }}</strong></p>
-            <p class="custom-p-style">Порт: <strong>{{ product.socket_type }}</strong></p>
-            <p class="custom-p-style">Мощность: <strong>{{ product.power }}</strong></p>
-            <p class="custom-p-style">Удалённое управление: <strong>{{ product.remote_control }}</strong></p>
-            <p class="custom-p-style">{{ product.description }}</p>
-      
-            <div class="row">
-              <div class="col-12 col-md-3 mb-2">
-                <router-link to="/form-message">
-                  <a href="#" class="btn btn-primary d-flex w-100 pt-2 pb-2 justify-content-center">Заказать</a>
-                </router-link>
-              </div>
-      
-              <div class="col-12 col-md-4 mb-2">
-                <router-link to="/form-message">
-                  <a href="#" class="btn btn-primary d-flex w-100 pt-2 pb-2 justify-content-center">Уточнить детали</a>
-                </router-link>
-              </div>
-            </div>
-          </div>
+    <h1>{{ product.title }}</h1>
+    <h2 class="custom-h2-style">Цена: <strong>{{ product.price }}</strong> ₽</h2>
+    <p style="font-size: 1.2rem;">Монтаж: <strong>{{ product.installation }}</strong></p>
+    <p style="font-size: 1.2rem;">Количество портов: <strong>{{ product.sockets_count }}</strong></p>
+    <p style="font-size: 1.2rem;">Порт: <strong>{{ product.socket_type }}</strong></p>
+    <p style="font-size: 1.2rem;">Мощность: <strong>{{ product.power }}</strong></p>
+    <p style="font-size: 1.2rem;">Удалённое управление: <strong>{{ product.remote_control }}</strong></p>
+    <p style="font-size: 1.2rem;">{{ product.description }}</p>
+
+    <div class="row justify-content-start">
+        <div class="col-12 col-md-3 mb-2">
+            <router-link to="/form-message">
+                <a href="{% url 'create_order_or_question' %}" class="btn btn-primary d-flex w-100 pt-2 pb-2 justify-content-center">Заказать</a>
+            </router-link>
         </div>
+
+        <div class="col-12 col-md-4 mb-2">
+            <router-link to="/form-message">
+                <a href="{% url 'create_order_or_question' %}" class="btn btn-primary d-flex w-100 pt-2 pb-2 justify-content-center">Уточнить детали</a>
+            </router-link>
+        </div>
+    </div>
+</div>
       </div>
         
 

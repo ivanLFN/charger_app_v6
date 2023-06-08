@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from frontend.models import Partnership, Image, Product
+from frontend.forms import OrderOrQuestionForm
 
 
 def main_app(request):
@@ -45,10 +46,25 @@ def store(request):
 
 def product_detail(request, product_title):
     product = Product.objects.get(title=product_title)
-    active_img = product.images.first().src
-    return render(request, 'store/product_detail.html', {'product': product, 'active_img': active_img})
+    return render(request, 'store/product_detail.html', {'product': product})
 
 
 
 def personal_data(request):
     return render(request, 'general_elements/personal_data.html', {})
+
+
+def create_order_or_question(request):
+    if request.method == 'POST':
+        form = OrderOrQuestionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success_send')
+    else:
+        form = OrderOrQuestionForm()
+    
+    return render(request, 'general_elements/form_template.html', {'form': form})
+
+
+def success_send(request):
+    return render(request, 'general_elements/success_send.html', {})

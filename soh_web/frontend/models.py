@@ -9,7 +9,7 @@ class Image(models.Model):
 
     def __str__(self) -> str:
         return self.type_img + '_' + self.src
-    
+
 
 class Product(models.Model):
 
@@ -26,7 +26,7 @@ class Product(models.Model):
 
     def __str__(self) -> str:
         return self.title
-    
+
 
 class SegmetOfWork(models.Model):
 
@@ -38,12 +38,13 @@ class SegmetOfWork(models.Model):
         return self.title
 
 
-
 class Partnership(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=256)
-    image = models.ForeignKey(Image, on_delete=models.CASCADE, related_name='partnership_images')
-    header_img = models.ForeignKey(Image, on_delete=models.CASCADE, related_name='partnership_header_images')
+    image = models.ForeignKey(
+        Image, on_delete=models.CASCADE, related_name='partnership_images')
+    header_img = models.ForeignKey(
+        Image, on_delete=models.CASCADE, related_name='partnership_header_images')
     header_text_main = models.CharField(max_length=256)
     header_text = models.CharField(max_length=256)
     header_body = models.CharField(max_length=256, blank=True)
@@ -52,4 +53,15 @@ class Partnership(models.Model):
     def __str__(self) -> str:
         return self.title
 
-    
+
+class OrderOrQuestion(models.Model):
+
+    question = models.CharField(max_length=256)
+    name = models.CharField(max_length=50)
+    phone = models.CharField(max_length=20)
+    email = models.EmailField()
+    city = models.CharField(max_length=50)
+    status = models.CharField(max_length=50, null=True, blank=True)
+
+    def __str__(self) -> str:
+        return self.email
