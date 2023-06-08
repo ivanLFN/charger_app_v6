@@ -28,6 +28,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'LFN.current@yandex.com'  # Ваш адрес электронной почты
+EMAIL_HOST_PASSWORD = 'rttzbnxojgkpnfdp'  # Пароль приложения, созданный на предыдущем шаге
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = 'LFN.current@yandex.com'  # Ваш адрес электронной почты
+
 
 # Application definition
 

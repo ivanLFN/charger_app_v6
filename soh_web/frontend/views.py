@@ -1,6 +1,9 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from frontend.models import Partnership, Image, Product
 from frontend.forms import OrderOrQuestionForm
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 
 
 def main_app(request):
@@ -58,7 +61,21 @@ def create_order_or_question(request):
     if request.method == 'POST':
         form = OrderOrQuestionForm(request.POST)
         if form.is_valid():
+
+
+            
+            
+
             form.save()
+
+            context = form.data
+
+            html_message = render_to_string('general_elements/email_template.html', context)
+
+            plain_message = strip_tags(html_message)
+
+            send_mail('Отправитель', plain_message, 'LFN.current@yandex.com', ['LFN.current@yandex.com'])
+
             return redirect('success_send')
     else:
         form = OrderOrQuestionForm()
