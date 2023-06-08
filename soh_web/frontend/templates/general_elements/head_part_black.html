@@ -1,19 +1,18 @@
-
 {% load static %}
 <div class="container">
     <div class="col-12">
         <div class="row mob-mode pt-4 pb-4">
                 
             <div class="col-1 mr-2 d-flex align-items-center justify-content-center">
-                <a href="{% url 'main_page' %}" class="col-3 head-link">
+                <a href="{% url 'main_page' %}" class="col-3 head-link-b">
                     <img src='{% static "img/logo.png" %}' class="align-items-center justify-content-center" alt="Logo Image"/>
                 </a>
             </div>
 
             <div class="row btn-items col-7 offset-1 d-flex align-items-center justify-content-center">
-                <a href="{% url 'store' %}" class="col-4 head-link" style="color:#212529;">Продукты</a>
-                <a href="{% url 'partnership_page' %}" class="head-link col-4 col-md-4 col-lg-5" style="color:#212529;">Партнерство</a>
-                <a href="{% url 'contacts' %}" class="head-link col-4 col-md-4 col-lg-3" style="color:#212529;">Контакты</a>
+                <a href="{% url 'store' %}" class="col-4 head-link-b">Продукты</a>
+                <a href="{% url 'partnership_page' %}" class="head-link-b col-4 col-md-4 col-lg-5">Партнерство</a>
+                <a href="{% url 'contacts' %}" class="head-link-b col-4 col-md-4 col-lg-3">Контакты</a>
             </div>
 
             <div class="col-2 offset-1 d-flex justify-content-center align-items-center">
@@ -25,3 +24,20 @@
         
     </div>
 </div>
+
+<style>
+.head-link-b {
+    display: inline-flex;
+    text-decoration: none !important;
+    color: #212529;
+    font-weight: 350;
+    font-size: 2vw;
+    transition: color 0.5s ease-out;
+}
+
+
+.head-link-b:hover {
+    color: #1FC4C2;
+}
+
+</style>
