@@ -68,3 +68,13 @@ def create_order_or_question(request):
 
 def success_send(request):
     return render(request, 'general_elements/success_send.html', {})
+
+
+def partnership_page(request):
+    partners_list = Partnership.objects.all()
+    return render(request, 'general_elements/partnership_page.html', {'partners_list': partners_list})
+
+
+def contacts(request):
+    return render(request, 'general_elements/contacts.html', {})
+

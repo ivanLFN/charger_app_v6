@@ -10,7 +10,7 @@
                 <div class="col-10 col-sm-5">
                     <h1>{{ partner.header_text_main }}</h1>
                     <p class="mt-3" style="font-size: 1.2rem;">{{ partner.header_text }}</p>
-                    <a href="#" class="btn btn-primary pt-2 pb-2 mt-3 justify-content-center">Нужна консультация</a>
+                    <a href="{% url 'create_order_or_question' %}" class="btn btn-primary pt-2 pb-2 mt-3 justify-content-center">Нужна консультация</a>
                 </div>
                 <div class="col-7 text-center">
                     <img src="{% static partner.header_img.src %}" alt="{{ partner.title }}" class="header-img img-fluid" style="max-width: 100%;" />

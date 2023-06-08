@@ -2,17 +2,17 @@
 <div class="container">
     <div class="col-12">
         <div class="row mob-mode pt-4 pb-4">
-
+                
             <div class="col-1 mr-2 d-flex align-items-center justify-content-center">
-                <a class="col-3 head-link" to="/main">
+                <a href="{% url 'main_page' %}" class="col-3 head-link">
                     <img src='{% static "img/logo.png" %}' class="align-items-center justify-content-center" alt="Logo Image"/>
                 </a>
             </div>
 
             <div class="row btn-items col-7 offset-1 d-flex align-items-center justify-content-center">
-                <a href="#" class="col-4 head-link">Продукты</a>
-                <a href="#" class="head-link col-4 col-md-4 col-lg-5">Партнерство</a>
-                <a href="#" class="head-link col-4 col-md-4 col-lg-3">Контакты</a>
+                <a href="{% url 'store' %}" class="col-4 head-link">Продукты</a>
+                <a href="{% url 'partnership_page' %}" class="head-link col-4 col-md-4 col-lg-5">Партнерство</a>
+                <a href="{% url 'contacts' %}" class="head-link col-4 col-md-4 col-lg-3">Контакты</a>
             </div>
 
             <div class="col-2 offset-1 d-flex justify-content-center align-items-center">

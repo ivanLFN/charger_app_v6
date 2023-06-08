@@ -1,0 +1,21 @@
+
+<!-- partnership_page.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+
+    <div>
+        {% include 'general_elements/partnership.html' %}
+    </div>
+
+    <div class="container">
+        <a href="{% url 'main_page' %}">
+            <img src='{% static "img/comeback.png" %}  ' class="align-items-center justify-content-center mt-3 mb-3" alt="Logo Image"/>
+        </a>
+    </div>
+
+
+    
+        
+{% endblock %}
