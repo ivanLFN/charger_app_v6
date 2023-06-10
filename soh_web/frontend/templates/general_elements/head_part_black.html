@@ -4,7 +4,7 @@
         <div class="row mob-mode pt-4 pb-4">
                 
             <div class="col-1 mr-2 d-flex align-items-center justify-content-center">
-                <a href="{% url 'main_page' %}" class="col-3 head-link-b">
+                <a href="{% url 'main_page' %}" class="col-3 head-link-b ml-5">
                     <img src='{% static "img/logo.png" %}' class="align-items-center justify-content-center" alt="Logo Image"/>
                 </a>
             </div>
@@ -38,6 +38,49 @@
 
 .head-link-b:hover {
     color: #1FC4C2;
+}
+
+@media (max-width: 767px) {
+    .btn-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .head-link-b {
+        font-size: 22px; /* Измените размер шрифта на нужное значение */
+        align-items:center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header-down-down{
+        display: none;
+    }
+}
+
+.log-in-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 10px;
+    background: #FFFFFF;
+    border: 4px solid #073232;
+    border-radius: 18px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+    color: #333333;
+    text-decoration: none !important;
+    transition: background-color 0.5s ease-out;
+}
+
+.log-in-btn:hover {
+    background-color: #1FC4C2;
+    color: #333333;
 }
 
 </style>
